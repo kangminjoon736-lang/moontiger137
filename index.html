@@ -3,203 +3,318 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Philemon | Developer Portfolio</title>
+<title>Philemon Coffee Journey</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+scroll-behavior:smooth;
 }
 
-/* BACKGROUND */
-body {
-    min-height: 100vh;
-    color: white;
-    background: linear-gradient(-45deg, #0f172a, #1e3a8a, #0ea5e9, #0f172a);
-    background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
+body{
+background:#0b0b0b;
+color:#fff;
 }
 
-@keyframes gradient {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
+/* NAVBAR */
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:15px 8%;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
 
-/* NAV */
-nav {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 40px;
-    background: rgba(0,0,0,0.4);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
+nav a{
+color:#fff;
+text-decoration:none;
+margin:0 10px;
+font-size:14px;
+opacity:0.8;
+transition:0.3s;
 }
 
-nav a {
-    color: white;
-    margin-left: 20px;
-    text-decoration: none;
-}
-
-/* LAYOUT */
-.container {
-    display: flex;
-    gap: 20px;
-    padding: 100px 20px 40px;
-}
-
-/* MAIN CONTENT */
-.main {
-    flex: 3;
-}
-
-/* SIDEBAR */
-.sidebar {
-    flex: 1;
-    position: sticky;
-    top: 100px;
+nav a:hover{
+opacity:1;
+color:#c89b5a;
 }
 
 /* HERO */
-.hero {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    margin-bottom: 30px;
+.hero{
+height:100vh;
+position:relative;
+overflow:hidden;
 }
 
-.hero img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 4px solid #38bdf8;
-    object-fit: cover;
+.hero video{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+filter:brightness(35%);
 }
 
-/* CARDS */
-.card {
-    background: rgba(255,255,255,0.08);
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
+.hero-content{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+text-align:center;
+width:90%;
 }
 
-/* SIDEBAR VIDEO */
-video {
-    width: 100%;
-    border-radius: 12px;
-    border: 2px solid #38bdf8;
+.hero h1{
+font-size:60px;
+letter-spacing:2px;
 }
 
-/* SECTIONS */
-section {
-    margin-bottom: 25px;
+.hero h2{
+font-size:22px;
+margin-top:10px;
+color:#c89b5a;
+min-height:30px;
 }
 
-h2 {
-    margin-bottom: 10px;
+.hero p{
+margin-top:15px;
+color:#ccc;
 }
 
 /* BUTTON */
-.btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 15px;
-    background: #38bdf8;
-    color: black;
-    border-radius: 8px;
-    text-decoration: none;
+.btn{
+margin-top:25px;
+padding:12px 28px;
+border:none;
+border-radius:30px;
+background:#c89b5a;
+color:#000;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#fff;
+transform:scale(1.05);
+}
+
+/* SECTIONS */
+section{
+padding:100px 10%;
+}
+
+/* GLASS CARD */
+.glass{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(12px);
+border-radius:20px;
+padding:25px;
+transition:0.4s;
+}
+
+.glass:hover{
+transform:translateY(-5px);
+background:rgba(255,255,255,0.08);
+}
+
+/* ABOUT */
+.about{
+display:flex;
+gap:40px;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.about img{
+width:320px;
+border-radius:20px;
+}
+
+.about p{
+color:#ccc;
+line-height:1.7;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+/* TITLE */
+.title{
+font-size:34px;
+margin-bottom:40px;
+color:#c89b5a;
+}
+
+/* TIMELINE */
+.timeline{
+border-left:2px solid #c89b5a;
+padding-left:20px;
+}
+
+.timeline div{
+margin-bottom:20px;
+color:#ccc;
+}
+
+/* CONTACT */
+.contact{
+text-align:center;
+}
+
+footer{
+text-align:center;
+padding:20px;
+color:#666;
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
-    <h2>Philemon</h2>
-    <div>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
+<div><b>Philemon Coffee</b></div>
+<div>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#beans">Beans</a>
+<a href="#journey">Journey</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
 
-<div class="container">
+<!-- HERO -->
+<div class="hero" id="home">
+<video autoplay muted loop>
+<source src="myvideo.mp4">
+</video>
 
-    <!-- MAIN CONTENT -->
-    <div class="main">
+<div class="hero-content">
+<h1>Philemon Tamang</h1>
+<h2 id="typing"></h2>
+<p>From Nepal to Dubai — crafting coffee & experiences ☕</p>
+<button class="btn" onclick="document.getElementById('about').scrollIntoView()">Explore</button>
+</div>
+</div>
 
-        <!-- HERO -->
-        <div class="hero">
-            <img src="myphoto.jpeg" alt="My Photo">
-            <div>
-                <h1>Hello, I'm Philemon</h1>
-                <p>Future Software Engineer | Digital Learner</p>
-                <a class="btn" href="#contact">Contact Me</a>
-            </div>
-        </div>
+<!-- ABOUT -->
+<section id="about">
+<div class="title">About Me</div>
 
-        <!-- ABOUT -->
-        <section id="about">
-            <h2>About Me</h2>
-            <div class="card">
-                I am from Nepal. I worked as a barista in Dubai for 3 years. Now I am learning web development and digital skills to build my future career.
-            </div>
-        </section>
+<div class="about glass">
+<img src="myphoto.jpeg">
 
-        <!-- SKILLS -->
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="card">
-                ✔ English Communication <br><br>
-                ✔ Customer Service <br><br>
-                ✔ Web Development (Beginner)
-            </div>
-        </section>
+<p>
+I am Philemon Tamang from Nepal. I worked as a professional barista in Dubai for 3 years,
+where I mastered coffee preparation, customer experience, and café operations.
+<br><br>
+Now I am building my journey into technology, web development, and creative digital work,
+while keeping my passion for coffee culture alive.
+</p>
+</div>
+</section>
 
-        <!-- PROJECTS -->
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="card">
-                This is my learning portfolio project built using HTML & CSS.
-            </div>
-        </section>
+<!-- BEANS -->
+<section id="beans">
+<div class="title">Coffee Beans</div>
 
-        <!-- CONTACT -->
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="card">
-                Email: yourname@example.com
-            </div>
-        </section>
+<div class="grid">
 
-    </div>
+<div class="glass">
+<h3 style="color:#c89b5a;">Arabica</h3>
+<p>Smooth, sweet flavor with chocolate & fruity notes. Premium quality bean used worldwide.</p>
+</div>
 
-    <!-- SIDEBAR -->
-    <div class="sidebar">
+<div class="glass">
+<h3 style="color:#c89b5a;">Robusta</h3>
+<p>Strong, bold, high caffeine content. Perfect for intense espresso shots.</p>
+</div>
 
-        <h2>My Video</h2>
+<div class="glass">
+<h3 style="color:#c89b5a;">Liberica</h3>
+<p>Rare bean with smoky, floral aroma and unique taste profile.</p>
+</div>
 
-        <video controls>
-            <source src="myvideo.mp4" type="video/mp4">
-        </video>
-
-        <div class="card">
-            🔥 This is my personal introduction video  
-            📍 Uploaded locally  
-        </div>
-
-    </div>
+<div class="glass">
+<h3 style="color:#c89b5a;">Excelsa</h3>
+<p>Fruity, tart flavor used to add complexity to blends.</p>
+</div>
 
 </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey">
+<div class="title">My Journey</div>
+
+<div class="glass timeline">
+<div>🇳🇵 Nepal — Learned hospitality & service</div>
+<div>✈️ Dubai — 3 years professional barista experience</div>
+<div>☕ Coffee Mastery — Developed passion for coffee culture</div>
+<div>💻 Future — Building skills in tech & digital world</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<div class="title">Contact</div>
+
+<div class="glass contact">
+<p>Email: kangminjoon736@gmail.com</p>
+<p>Instagram: Phile Tamang</p>
+<p>Facebook: Phile Tamang</p>
+</div>
+</section>
+
+<footer>
+© 2026 Philemon Coffee Journey
+</footer>
+
+<!-- TYPING ANIMATION -->
+<script>
+const text = ["Barista ☕", "Coffee Lover", "Creative Builder", "Future Developer"];
+let i = 0;
+let j = 0;
+let current = "";
+let isDeleting = false;
+
+function type(){
+current = text[i];
+
+if(isDeleting){
+document.getElementById("typing").innerHTML = current.substring(0, j--);
+}else{
+document.getElementById("typing").innerHTML = current.substring(0, j++);
+}
+
+if(!isDeleting && j === current.length){
+isDeleting = true;
+setTimeout(type, 1000);
+return;
+}
+
+if(isDeleting && j === 0){
+isDeleting = false;
+i = (i+1) % text.length;
+}
+
+setTimeout(type, 100);
+}
+
+type();
+</script>
 
 </body>
 </html>
