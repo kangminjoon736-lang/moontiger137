@@ -13,13 +13,18 @@
     font-family: Arial, sans-serif;
 }
 
-/* HEADER NAV */
+/* BACKGROUND */
+body {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+}
+
+/* HEADER */
 header {
     position: fixed;
-    width: 100%;
     top: 0;
-    left: 0;
-    background: rgba(0,0,0,0.7);
+    width: 100%;
+    background: rgba(0,0,0,0.6);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
@@ -35,94 +40,96 @@ nav a {
     color: white;
     margin-left: 20px;
     text-decoration: none;
-    transition: 0.3s;
 }
 
 nav a:hover {
-    color: #00c3ff;
+    color: #38bdf8;
 }
 
-/* HERO SECTION */
-.hero {
-    height: 100vh;
-    background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+/* MAIN LAYOUT */
+.main {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    color: white;
-    position: relative;
+    min-height: 100vh;
+    padding-top: 80px;
+    gap: 40px;
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
+/* LEFT PHOTO */
+.left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    animation: slideInLeft 1.5s ease;
 }
 
-.hero-content {
-    position: relative;
-    animation: fadeIn 2s ease-in-out;
+.left img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 4px solid #38bdf8;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.hero h1 {
-    font-size: 50px;
+/* RIGHT CONTENT */
+.right {
+    flex: 1;
+    animation: fadeIn 2s ease;
 }
 
-.hero p {
-    font-size: 20px;
+.right h1 {
+    font-size: 45px;
+}
+
+.right p {
     margin-top: 10px;
+    color: #cbd5e1;
 }
 
 .btn {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background: #00c3ff;
-    color: white;
-    text-decoration: none;
+    background: #38bdf8;
+    color: black;
     border-radius: 8px;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #0099cc;
+    text-decoration: none;
 }
 
 /* SECTIONS */
 section {
-    padding: 80px 20px;
+    padding: 60px 20px;
     text-align: center;
 }
 
-.container {
-    max-width: 900px;
-    margin: auto;
-}
-
 .card {
-    background: #f4f4f4;
+    background: rgba(255,255,255,0.05);
     padding: 20px;
-    margin: 15px 0;
-    border-radius: 10px;
+    margin: 10px auto;
+    max-width: 700px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
 }
 
-/* ANIMATION */
+/* ANIMATIONS */
 @keyframes fadeIn {
     from {opacity: 0; transform: translateY(30px);}
     to {opacity: 1; transform: translateY(0);}
 }
 
+@keyframes slideInLeft {
+    from {opacity: 0; transform: translateX(-50px);}
+    to {opacity: 1; transform: translateX(0);}
+}
+
 /* FOOTER */
 footer {
-    background: #111;
-    color: white;
     text-align: center;
     padding: 20px;
+    background: rgba(0,0,0,0.5);
+    margin-top: 40px;
 }
 </style>
 
@@ -140,39 +147,43 @@ footer {
     </nav>
 </header>
 
-<section class="hero" id="home">
-    <div class="hero-content">
+<!-- MAIN HERO -->
+<div class="main" id="home">
+
+    <!-- LEFT IMAGE -->
+    <div class="left">
+        <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=600&q=80" alt="Profile">
+    </div>
+
+    <!-- RIGHT TEXT -->
+    <div class="right">
         <h1>Hello, I'm Philemon</h1>
-        <p>Future Software Engineer | Digital Learner</p>
+        <p>Future Software Engineer | Digital Skills Learner</p>
         <a class="btn" href="#contact">Contact Me</a>
     </div>
-</section>
 
+</div>
+
+<!-- ABOUT -->
 <section id="about">
-    <div class="container">
-        <h2>About Me</h2>
-        <div class="card">
-            I am from Nepal. I worked as a barista in Dubai for 3 years. Now I am learning digital skills and web development.
-        </div>
+    <h2>About Me</h2>
+    <div class="card">
+        I am from Nepal. I worked as a barista in Dubai for 3 years. I am now learning web development and digital skills.
     </div>
 </section>
 
+<!-- SKILLS -->
 <section id="skills">
-    <div class="container">
-        <h2>Skills</h2>
-        <div class="card">English Communication</div>
-        <div class="card">Customer Service</div>
-        <div class="card">Basic Web Development</div>
-    </div>
+    <h2>Skills</h2>
+    <div class="card">English Communication</div>
+    <div class="card">Customer Service</div>
+    <div class="card">Basic Web Development</div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
-    <div class="container">
-        <h2>Contact</h2>
-        <div class="card">
-            Email: yourname@example.com
-        </div>
-    </div>
+    <h2>Contact</h2>
+    <div class="card">Email: yourname@example.com</div>
 </section>
 
 <footer>
