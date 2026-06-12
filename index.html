@@ -75,9 +75,34 @@ grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 gap:20px;
 }
 
-.about{display:flex;gap:40px;flex-wrap:wrap;align-items:center;}
-.about img{width:320px;border-radius:20px;}
-.about p{color:#ccc;line-height:1.8;}
+.about-story{
+display:flex;
+gap:40px;
+flex-wrap:wrap;
+align-items:center;
+padding:40px;
+border-radius:20px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.12);
+}
+
+.about-story img{
+width:320px;
+max-width:100%;
+border-radius:20px;
+border:4px solid #c89b5a;
+}
+
+.about-text{
+flex:1;
+min-width:300px;
+}
+
+.about-text p{
+color:#ccc;
+line-height:1.8;
+margin-bottom:15px;
+}
 
 .timeline{border-left:2px solid #c89b5a;padding-left:20px;}
 .timeline div{margin-bottom:15px;color:#ccc;}
@@ -118,9 +143,20 @@ footer{text-align:center;padding:20px;color:#666;}
 
 <section id="about">
 <div class="title">My Coffee Story</div>
-<div class="about glass">
-<img src="myphoto.jpeg">
-<p>I am Philemon from Nepal. 3 years barista experience in Dubai. Coffee is my craft and passion.</p>
+
+<div class="about-story">
+<img src="myphoto.jpeg" alt="Philemon Tamang">
+
+<div class="about-text">
+<p>
+My name is <strong>Philemon Tamang</strong>, a passionate coffee professional from Nepal with three years of hands-on barista experience in Dubai.
+</p>
+
+<p>
+My journey in coffee has allowed me to develop expertise in espresso preparation, latte art, customer service, and specialty coffee craftsmanship. I believe every cup tells a story, and my goal is to create memorable coffee experiences while continuously expanding my knowledge of the coffee industry.
+</p>
+</div>
+
 </div>
 </section>
 
