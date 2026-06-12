@@ -8,73 +8,80 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
+/* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:#0b0b0b;color:#fff;font-family:Poppins,sans-serif;overflow-x:hidden;}
-
-body::before{
-content:"";
-position:fixed;
-width:100%;height:100%;
-background:
-radial-gradient(circle at 20% 20%, rgba(200,155,90,0.18), transparent 40%),
-radial-gradient(circle at 80% 80%, rgba(255,255,255,0.05), transparent 40%);
-z-index:-2;
+body{
+background:#0b0b0b;
+color:#fff;
+font-family:Poppins,sans-serif;
+overflow-x:hidden;
 }
 
-nav{
-position:fixed;top:0;width:100%;
-display:flex;justify-content:space-between;
-padding:15px 8%;
-background:rgba(0,0,0,0.35);
-backdrop-filter:blur(12px);
-z-index:1000;
-}
-
-nav a{color:#fff;margin:0 12px;text-decoration:none;font-size:14px;opacity:0.7;}
-nav a:hover{opacity:1;color:#c89b5a;}
-
+/* HERO */
 .hero{
-height:100vh;display:flex;align-items:center;justify-content:center;
-text-align:center;position:relative;overflow:hidden;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
 }
 
 .hero video{
-position:absolute;width:100%;height:100%;
-object-fit:cover;filter:brightness(35%);z-index:-1;
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+filter:brightness(35%);
+z-index:-1;
 }
 
 .hero h1{
 font-family:"Playfair Display",serif;
-font-size:64px;
-text-shadow:0 0 30px rgba(200,155,90,0.25);
+font-size:60px;
 }
 
-.hero h2{color:#c89b5a;margin-top:10px;min-height:30px;}
-.hero p{margin-top:15px;color:#ccc;max-width:600px;margin:auto;}
+.hero h2{
+color:#c89b5a;
+margin-top:10px;
+}
+
+.hero p{
+color:#ccc;
+margin-top:10px;
+}
 
 .btn{
-margin-top:25px;padding:12px 30px;border:none;border-radius:30px;
-background:#c89b5a;color:#000;font-weight:600;cursor:pointer;
+margin-top:20px;
+padding:12px 28px;
+border:none;
+border-radius:30px;
+background:#c89b5a;
+color:#000;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
 }
 
-section{padding:120px 10%;}
-.title{font-family:"Playfair Display",serif;font-size:36px;color:#c89b5a;margin-bottom:40px;}
-
-.glass{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.12);
-backdrop-filter:blur(14px);
-border-radius:20px;
-padding:25px;
-margin-bottom:20px;
+.btn:hover{
+transform:scale(1.05);
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:20px;
+/* SECTIONS */
+section{
+padding:100px 10%;
 }
 
+.title{
+font-size:36px;
+color:#c89b5a;
+font-family:"Playfair Display",serif;
+text-align:center;
+margin-bottom:40px;
+}
+
+/* ABOUT */
 .about-story{
 display:flex;
 gap:40px;
@@ -82,52 +89,111 @@ flex-wrap:wrap;
 align-items:center;
 padding:40px;
 border-radius:20px;
+
 background:
 linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
 url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80");
+
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
-border:1px solid rgba(255,255,255,0.12);
+
+box-shadow:0 10px 40px rgba(0,0,0,0.5);
 }
 
 .about-story img{
 width:320px;
-max-width:100%;
 border-radius:20px;
 border:4px solid #c89b5a;
-}
-
-.about-story img{
-transition:0.4s ease;
+transition:0.4s;
 }
 
 .about-story img:hover{
 transform:scale(1.05);
 }
-  
+
 .about-text{
 flex:1;
-min-width:300px;
+min-width:280px;
 }
 
 .about-text p{
 color:#f5f5f5;
 line-height:1.9;
 margin-bottom:15px;
-font-size:17px;
 text-shadow:0 2px 10px rgba(0,0,0,0.6);
 }
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
 }
 
-.timeline{border-left:2px solid #c89b5a;padding-left:20px;}
-.timeline div{margin-bottom:15px;color:#ccc;}
+.glass{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.12);
+backdrop-filter:blur(10px);
+border-radius:20px;
+padding:20px;
+transition:0.3s;
+}
 
-.contact{text-align:center;color:#ccc;}
-footer{text-align:center;padding:20px;color:#666;}
+.glass:hover{
+transform:translateY(-8px);
+}
 
-.glass, .title{opacity:0;transform:translateY(40px);transition:all 0.8s ease;}
-.show{opacity:1;transform:translateY(0);}
+/* NAV */
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:15px 8%;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+nav a{
+color:#fff;
+margin:0 10px;
+text-decoration:none;
+opacity:0.7;
+}
+
+nav a:hover{
+color:#c89b5a;
+opacity:1;
+}
+
+/* CONTACT */
+.contact{
+text-align:center;
+color:#ccc;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+color:#666;
+font-size:14px;
+}
+
+/* ANIMATION */
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
 
 </style>
 </head>
@@ -144,6 +210,7 @@ footer{text-align:center;padding:20px;color:#666;}
 </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
 <video autoplay muted loop>
 <source src="myvideo.mp4">
@@ -151,118 +218,77 @@ footer{text-align:center;padding:20px;color:#666;}
 
 <div>
 <h1>PHILEMON TAMANG</h1>
-<h2 id="typing"></h2>
-<p>From Nepal to Dubai — Coffee Experience ☕</p>
+<h2>Barista • Coffee Artist</h2>
+<p>From Nepal to Dubai — Crafting Coffee Stories ☕</p>
 <button class="btn" onclick="document.getElementById('about').scrollIntoView()">Explore</button>
 </div>
 </div>
 
+<!-- ABOUT -->
 <section id="about">
 <div class="title">My Coffee Story</div>
 
-<div class="about-story">
-<img src="myphoto.jpeg" alt="Philemon Tamang">
+<div class="about-story fade">
+<img src="myphoto.jpeg">
 
 <div class="about-text">
-<p>
-My name is <strong>Philemon Tamang</strong>, a passionate coffee professional from Nepal with three years of hands-on barista experience in Dubai.
-</p>
-
-<p>
-My journey in coffee has allowed me to develop expertise in espresso preparation, latte art, customer service, and specialty coffee craftsmanship. I believe every cup tells a story, and my goal is to create memorable coffee experiences while continuously expanding my knowledge of the coffee industry.
-</p>
+<p><b>Philemon Tamang</b>, passionate barista from Nepal with 3 years Dubai experience.</p>
+<p>I specialize in espresso, latte art, and coffee craftsmanship.</p>
+<p>My goal is to create unforgettable coffee experiences.</p>
 </div>
 
 </div>
 </section>
 
+<!-- BEANS -->
 <section id="beans">
 <div class="title">Coffee Beans</div>
+
 <div class="grid">
 
-<div class="glass">
-<img src="https://images.unsplash.com/photo-1587735243615-c03f25aaff15" style="width:100%;border-radius:12px;margin-bottom:10px;">
-<b style="color:#c89b5a;">Arabica</b>
-<p>Smooth, sweet flavor with chocolate notes.</p>
-</div>
-
-<div class="glass">
-<img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" style="width:100%;border-radius:12px;margin-bottom:10px;">
-<b style="color:#c89b5a;">Robusta</b>
-<p>Strong, bold caffeine-rich coffee.</p>
-</div>
-
-<div class="glass">
-<img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e" style="width:100%;border-radius:12px;margin-bottom:10px;">
-<b style="color:#c89b5a;">Liberica</b>
-<p>Rare smoky floral profile.</p>
-</div>
-
-<div class="glass">
-<img src="https://images.unsplash.com/photo-1459755486867-b55449bb39ff" style="width:100%;border-radius:12px;margin-bottom:10px;">
-<b style="color:#c89b5a;">Excelsa</b>
-<p>Fruity and complex blend notes.</p>
-</div>
+<div class="glass">Arabica – smooth & sweet ☕</div>
+<div class="glass">Robusta – strong & bold ⚡</div>
+<div class="glass">Liberica – rare & smoky 🌿</div>
+<div class="glass">Excelsa – fruity & complex 🍓</div>
 
 </div>
 </section>
 
-<section>
-<div class="title">Coffee Gallery</div>
-<div class="grid">
-
-<div class="glass"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348" style="width:100%;border-radius:12px;"></div>
-<div class="glass"><img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571" style="width:100%;border-radius:12px;"></div>
-<div class="glass"><img src="https://images.unsplash.com/photo-1521302080334-4bebac2763a6" style="width:100%;border-radius:12px;"></div>
-
-</div>
-</section>
-
+<!-- JOURNEY -->
 <section id="journey">
 <div class="title">My Journey</div>
-<div class="glass timeline">
-<div>Nepal — Hospitality learning</div>
-<div>Dubai — 3 years Barista experience</div>
-<div>Future — Tech & entrepreneurship</div>
+
+<div class="glass fade">
+Nepal → Learning hospitality<br>
+Dubai → 3 years barista experience<br>
+Future → Coffee entrepreneur
 </div>
+
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
 <div class="title">Contact</div>
-<div class="glass contact">
+
+<div class="contact glass fade">
 Email: kangminjoon736@gmail.com<br>
 Instagram: Phile Tamang
 </div>
+
 </section>
 
 <footer>© 2026 Philemon Coffee Journey</footer>
 
 <script>
-const text=["Barista ☕","Coffee Artist","Creative Builder","Future Developer"];
-let i=0,j=0,del=false;
+const elements=document.querySelectorAll(".fade");
 
-function type(){
-const el=document.getElementById("typing");
-const word=text[i];
-
-el.innerHTML=word.substring(0,j);
-
-if(!del){
-j++;
-if(j>word.length){del=true;setTimeout(type,1000);return;}
-}else{
-j--;
-if(j===0){del=false;i=(i+1)%text.length;}
+window.addEventListener("scroll",()=>{
+elements.forEach(el=>{
+const top=el.getBoundingClientRect().top;
+if(top<600){
+el.classList.add("show");
 }
-setTimeout(type,80);
-}
-type();
-
-window.addEventListener("DOMContentLoaded",()=>{
-const obs=new IntersectionObserver(entries=>{
-entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show");});
 });
-document.querySelectorAll(".glass,.title").forEach(el=>obs.observe(el));
 });
 </script>
 
