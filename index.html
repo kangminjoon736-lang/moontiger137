@@ -1,52 +1,106 @@
 <section id="about">
-<div class="title">My Coffee Story</div>
+    <div class="title">My Coffee Story</div>
 
-<div class="about glass">
+    <div class="about">
 
-<img src="myphoto.jpeg" alt="Philemon Tamang">
+        <img src="myphoto.jpeg" alt="Philemon Tamang">
 
-<p>
-My name is Philemon Tamang, a passionate coffee professional from Nepal with
-three years of hands-on barista experience in Dubai. My journey in coffee has
-allowed me to develop expertise in espresso preparation, latte art, customer
-service, and specialty coffee craftsmanship. I believe every cup tells a story,
-and my goal is to create memorable coffee experiences while continuously
-expanding my knowledge of the coffee industry.
-</p>
+        <div class="about-text">
+            <p>
+                My name is <strong>Philemon Tamang</strong>, a dedicated coffee
+                professional from Nepal with over three years of hands-on barista
+                experience in Dubai. Throughout my journey, I have developed
+                expertise in espresso extraction, latte art, customer service,
+                and specialty coffee preparation.
+            </p>
 
-</div>
+            <p>
+                Growing up in Nepal, surrounded by beautiful hills where coffee
+                is cultivated, inspired my passion for coffee culture and quality.
+                I believe every cup represents craftsmanship, dedication, and a
+                unique story. My mission is to create memorable coffee
+                experiences while continuously expanding my knowledge of coffee
+                roasting, brewing techniques, and specialty coffee innovation.
+            </p>
+        </div>
+
+    </div>
 </section>
 
 <style>
+#about{
+    padding:80px 10%;
+}
+
+#about .title{
+    text-align:center;
+    font-size:2.5rem;
+    font-weight:700;
+    color:#c89b5a;
+    margin-bottom:40px;
+}
+
 .about{
-display:flex;
-gap:40px;
-flex-wrap:wrap;
-align-items:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:50px;
+    flex-wrap:wrap;
 
-background:
-linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)),
-url("https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1600&q=80");
+    background:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+    url("https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1600&q=80");
 
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 
-padding:40px;
-border-radius:20px;
+    padding:50px;
+    border-radius:25px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.4);
 }
 
 .about img{
-width:320px;
-border-radius:20px;
-border:4px solid #c89b5a;
-box-shadow:0 0 30px rgba(200,155,90,0.4);
+    width:320px;
+    max-width:100%;
+    border-radius:20px;
+    border:4px solid #c89b5a;
+    box-shadow:0 0 35px rgba(200,155,90,0.5);
+    transition:0.4s;
 }
 
-.about p{
-color:#f5f5f5;
-font-size:17px;
-line-height:1.9;
-max-width:700px;
+.about img:hover{
+    transform:scale(1.03);
+}
+
+.about-text{
+    flex:1;
+    min-width:300px;
+}
+
+.about-text p{
+    color:#f5f5f5;
+    font-size:18px;
+    line-height:1.9;
+    margin-bottom:20px;
+}
+
+.about-text strong{
+    color:#c89b5a;
+}
+
+@media(max-width:768px){
+    .about{
+        text-align:center;
+        padding:30px;
+    }
+
+    #about .title{
+        font-size:2rem;
+    }
+
+    .about-text p{
+        font-size:16px;
+    }
 }
 </style>
